@@ -47,6 +47,17 @@ use 'kcl-lang/kcl.nvim'
 },
 ```
 
+### [vim-plug](https://github.com/junegunn/vim-plug)
+
+```lua
+local vim = vim
+local Plug = vim.fn['plug#']
+
+vim.call 'plug#begin'
+Plug('kcl-lang/kcl.nvim', { ['for'] = 'kcl' })
+vim.call 'plug#end'
+```
+
 ## 🚀 LSP Config
 
 You may want to adjust your lspconfig.. for example:
