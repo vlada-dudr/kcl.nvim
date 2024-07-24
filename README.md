@@ -39,12 +39,9 @@ use 'kcl-lang/kcl.nvim'
 ### [folke/lazy.nvim](https://github.com/folke/lazy.nvim):
 
 ```lua
-{
-	"kcl-lang/kcl.nvim",
-	ft = {
-		"kcl",
-	},
-},
+require('lazy').setup({
+  "kcl-lang/kcl.nvim",
+})
 ```
 
 ### [vim-plug](https://github.com/junegunn/vim-plug)
@@ -54,22 +51,28 @@ local vim = vim
 local Plug = vim.fn['plug#']
 
 vim.call 'plug#begin'
-Plug('kcl-lang/kcl.nvim', { ['for'] = 'kcl' })
+Plug('kcl-lang/kcl.nvim')
 vim.call 'plug#end'
 ```
 
 ## 🚀 LSP Config
 
-You may want to adjust your lspconfig.. for example:
+You also need to set lsp config:
 
 ```lua
+local server_config = require("lspconfig.configs")
 local util = require("lspconfig.util")
 
-return {
+server_config.kcl = {
+	default_config = {},
+}
+
+require("lspconfig").kcl.setup({
 	cmd = { "kcl-language-server" },
 	filetypes = { "kcl" },
 	root_dir = util.root_pattern(".git"),
-}
+})
+
 ```
 
 ## ✨ Features
