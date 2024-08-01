@@ -84,10 +84,6 @@ require("lspconfig").kcl.setup({
 
 ## 🍭 Commands
 
-**Insert mode:**
-
-``Ctrl+\``  Toggle comment.
-
 **Normal mode:**
 
 ```zC```  Close all folds under the cursor recursively. 
