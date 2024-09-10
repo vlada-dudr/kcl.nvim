@@ -57,22 +57,10 @@ vim.call 'plug#end'
 
 ## 🚀 LSP Config
 
-You also need to set lsp config:
+Add this to `init.lua`:
 
 ```lua
-local server_config = require("lspconfig.configs")
-local util = require("lspconfig.util")
-
-server_config.kcl = {
-	default_config = {},
-}
-
-require("lspconfig").kcl.setup({
-	cmd = { "kcl-language-server" },
-	filetypes = { "kcl" },
-	root_dir = util.root_pattern(".git"),
-})
-
+require('lspconfig').kcl.setup({})
 ```
 
 ## ✨ Features
